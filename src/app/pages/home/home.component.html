@@ -1,1 +1,30 @@
-<p>home works!</p>
+<section class="flex flex-col w-full py-24 px-8 mb-8 bg-gray-100 rounded-lg">
+  <h2 class="mb-7 text-2xl font-bold">Receba todo mês um café especial</h2>
+  <div class="flex w-full max-w-md space-x-4">
+    <input
+      placeholder="Seu melhor e-mail"
+      class="flex-1 p-4 border rounded-md text-2xl"
+      type="email"
+    />
+    <button class="px-6 py-2 font-medium text-white bg-blue-600 rounded-md">
+      Assinar
+    </button>
+  </div>
+</section>
+<section class="w-full mt-8">
+  <h3 class="mb-4 text-3xl font-medium">Saiba mais</h3>
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+    <app-card
+      [title]="'O clube'"
+      [imageUrl]="'https://picsum.photos/220/120'"
+    />
+    <app-card
+      [title]="'Grão especial'"
+      [imageUrl]="'https://picsum.photos/220/120'"
+    />
+    <app-card
+      [title]="'Assinante do mês'"
+      [imageUrl]="'https://picsum.photos/220/120'"
+    />
+  </div>
+</section>
