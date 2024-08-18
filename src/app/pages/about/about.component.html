@@ -3,28 +3,12 @@
     Como funciona o clube de assinatura
   </h3>
   <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+    @for (card of cards; track card.id) {
     <app-card
-      [title]="'1. Escolha seu kit'"
-      [description]="
-        'Escolha o kit que melhor se adequa ao seu estilo de vida.'
-      "
-      [imageUrl]="'https://picsum.photos/220/120'"
+      [title]="card.title"
+      [description]="card.description"
+      [imageUrl]="card.imageUrl"
     />
-
-    <app-card
-      [title]="'2. Pagamento'"
-      [description]="
-        'Pague o valor do seu kit e receba o kit de grão especial.'
-      "
-      [imageUrl]="'https://picsum.photos/220/120'"
-    />
-
-    <app-card
-      [title]="'3. Aguarde o recebimento'"
-      [description]="
-        'O recebimento do seu kit será enviado para o seu email registrado.'
-      "
-      [imageUrl]="'https://picsum.photos/220/120'"
-    />
+    }
   </div>
 </section>

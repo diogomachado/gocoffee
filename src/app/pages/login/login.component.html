@@ -1,22 +1,34 @@
 <section class="w-full max-w-lg mt-8">
-  <div class="flex flex-col gap-4 mb-4">
-    <input
-      placeholder="E-mail"
-      autocomplete="off"
-      class="flex-1 p-4 border rounded-md text-2xl"
-      type="email"
-    />
+  <form [formGroup]="myForm" (ngSubmit)="handleSubmit()">
+    <div class="flex flex-col gap-4 mb-4">
+      <input
+        formControlName="email"
+        placeholder="E-mail"
+        autocomplete="off"
+        class="flex-1 p-4 border rounded-md text-2xl"
+        type="email"
+      />
 
-    <input
-      placeholder="Senha"
-      autocomplete="off"
-      class="flex-1 p-4 border rounded-md text-2xl"
-      type="password"
-    />
-  </div>
-  <div class="flex justify-end">
-    <button class="py-4 px-6 font-medium text-white bg-blue-600 rounded-md">
-      Entrar
-    </button>
-  </div>
+      @if (email?.hasError('required') && (email?.dirty || email?.touched) &&
+      submitted) {
+      <p>E-mail obrigatório</p>
+      }
+
+      <input
+        formControlName="password"
+        placeholder="Senha"
+        autocomplete="off"
+        class="flex-1 p-4 border rounded-md text-2xl"
+        type="password"
+      />
+    </div>
+    <div class="flex justify-end">
+      <button
+        type="submit"
+        class="py-4 px-6 font-medium text-white bg-blue-600 rounded-md disabled:bg-gray-400 disabled:opacity-30"
+      >
+        Entrar
+      </button>
+    </div>
+  </form>
 </section>
