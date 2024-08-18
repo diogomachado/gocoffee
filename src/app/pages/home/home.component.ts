@@ -12,13 +12,17 @@ import { CardComponent } from '../../components/card/card.component';
 })
 export class HomeComponent {
   cost = 19.99;
-  email = 'gocoffee@gmail.com';
+  email = '';
 
   handleOnClick(event: boolean) {
     console.log('Clicked on card', event);
   }
 
-  handleChangeEmail() {
-    console.log('Email changed', this.email);
+  handleChangeEmail(event: any) {
+    console.log('Email changed', event);
+  }
+
+  openDialog() {
+    window.alert('Seu e-mail é o ' + this.email);
   }
 }

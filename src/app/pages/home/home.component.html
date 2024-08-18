@@ -5,7 +5,8 @@
   <div class="flex w-full max-w-md space-x-4">
     <input
       [(ngModel)]="email"
-      (ngModelChange)="handleChangeEmail()"
+      [class.actived]="email"
+      (ngModelChange)="handleChangeEmail($event)"
       placeholder="Seu melhor e-mail"
       class="flex-1 p-4 border rounded-md text-2xl"
       type="email"
