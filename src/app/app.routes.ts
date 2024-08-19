@@ -1,9 +1,11 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { PathNotFoundComponent } from './pages/path-not-found/path-not-found.component';
+import { ProductsComponent } from './pages/products/products.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'produtos', component: ProductsComponent },
   {
     path: 'como-funciona',
     loadComponent() {

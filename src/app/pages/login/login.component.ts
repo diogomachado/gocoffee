@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { UtilService } from '../../services/util.service';
 
 @Component({
   selector: 'app-login',
@@ -16,6 +17,7 @@ import {
 export class LoginComponent {
   submitted = false;
   myForm: FormGroup;
+  utilService = inject(UtilService);
 
   get email() {
     return this.myForm.get('email');
@@ -34,6 +36,8 @@ export class LoginComponent {
 
   handleSubmit() {
     this.submitted = true;
+
+    console.log(this.utilService.randomUUID());
 
     if (this.myForm.valid) {
       console.log('Form submitted', this.myForm.value);

@@ -1,0 +1,8 @@
+<p>Products</p>
+
+@for (product of products; track product.id) {
+<div class="p-5 bg-gray-100 rounded-lg">
+  <p>{{ product.title }}</p>
+  <p>{{ product.price }}</p>
+</div>
+}
