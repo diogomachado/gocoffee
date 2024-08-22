@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment';
 
 interface Product {
   id: number;
@@ -11,7 +12,7 @@ interface Product {
   providedIn: 'root',
 })
 export class ApiService {
-  private baseUrl = 'https://fakestoreapi.com';
+  private baseUrl = environment.baseUrl;
 
   constructor(private http: HttpClient) {}
 
